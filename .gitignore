@@ -1,0 +1,20 @@
+# 파이썬 관련
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# 개인 설정 및 로그인 정보 (절대 GitHub에 올리면 안 되는 파일들)
+config/config.yaml
+config/*.json
+config/*.token
+.env
+
+# 실행 중 생성되는 개인 데이터 (사용자마다 다르고, 저장소에 들어갈 필요 없는 것들)
+config/state.yaml
+config/slides/
+config/pipeline.log
+

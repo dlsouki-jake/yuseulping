@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="eyebrow">발송 설정</p>
+<h2>이메일과 발송 시각</h2>
+<p class="lede">만들어진 슬라이드 요약을 어디로, 언제 받을지 정하세요.</p>
+<form method="post" action="{{ url_for('settings') }}">
+  <div class="card">
+    <div class="field">
+      <label class="field-label">받을 이메일 주소</label>
+      <input type="email" name="email_address" value="{{ email_address }}" placeholder="----@gmail.com" required>
+      <p class="help">Gmail 주소만 사용할 수 있어요.</p>
+    </div>
+    <div class="field">
+      <label class="field-label">Gmail 연결</label>
+      <div class="connect-box">
+        <div class="connect-row">
+          <div>
+            <div class="connect-title">Google 앱 코드 발급받기</div>
+            <div class="connect-desc">
+              버튼을 누르면 구글 발급 페이지가 새 탭으로 열려요.<br>
+              앱 이름 칸에는 <strong class="copy-chip">유슬핑</strong>이라고 입력한 뒤 "만들기"를 눌러주세요.<br>
+              그러면 16자리 코드가 나와요 — 그 코드를 복사해서 아래에 붙여넣으세요.
+            </div>
+          </div>
+          <a class="btn btn-ghost" href="https://myaccount.google.com/apppasswords" target="_blank" rel="noopener">Google에서 발급받기 ↗</a>
+        </div>
+        <input type="password" name="app_password" placeholder="{{ '코드가 저장되어 있어요 (다시 입력하면 교체돼요)' if has_app_password else '발급받은 코드 붙여넣기' }}">
+      </div>
+      <p class="help">구글 계정에 2단계 인증이 켜져 있어야 발급받을 수 있어요.</p>
+    </div>
+    <div class="field">
+      <label class="field-label">발송 시각</label>
+      <select name="send_time">
+        {% for t in send_time_options %}
+        <option value="{{ t }}" {{ 'selected' if t == send_time }}>{{ t }}{{ ' (기본값)' if t == '08:00' }}</option>
+        {% endfor %}
+      </select>
+      <p class="help">그날 만들어진 요약을 모아 하루 한 번, 이 시각에 보내드려요.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" type="submit">저장</button>
+  </div>
+</form>
+{% endblock %}

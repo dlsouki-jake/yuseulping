@@ -1,0 +1,5 @@
+flask
+pyyaml
+yt-dlp
+notebooklm-py
+playwright

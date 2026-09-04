@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>유슬핑</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+  <nav class="rail">
+    <a class="stub {{ 'active' if active == 'home' }}" href="{{ url_for('home') }}"><span class="dot"></span>시작하기</a>
+    <a class="stub {{ 'active' if active == 'channels' }}" href="{{ url_for('channels') }}"><span class="dot"></span>채널</a>
+    <a class="stub {{ 'active' if active == 'settings' }}" href="{{ url_for('settings') }}"><span class="dot"></span>발송 설정</a>
+    <a class="stub {{ 'active' if active == 'dashboard' }}" href="{{ url_for('dashboard') }}"><span class="dot"></span>대시보드</a>
+    <div class="rail-foot">이 프로그램은 여러분의 컴퓨터 안에서만 실행돼요. 데이터는 외부로 나가지 않아요.</div>
+  </nav>
+
+  <div class="perforation" aria-hidden="true"></div>
+
+  <main class="stage">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</div>
+</body>
+</html>

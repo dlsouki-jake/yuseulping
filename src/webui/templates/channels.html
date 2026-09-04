@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="eyebrow">채널</p>
+<h2>구독 채널 등록</h2>
+<p class="lede">새 영상이 올라오면 슬라이드 요약을 받고 싶은 채널의 URL을 붙여넣어 추가하세요.</p>
+<div class="card">
+  <form method="post" action="{{ url_for('channels') }}">
+    <div class="row">
+      <input type="text" name="url" placeholder="https://www.youtube.com/@채널이름" required>
+      <button class="btn btn-primary" type="submit" style="flex: none;">추가</button>
+    </div>
+  </form>
+  <p class="help" style="margin-top: 8px;">쇼츠(짧은 영상)는 제외되고, 일반 영상만 요약돼요.</p>
+
+  <div class="channel-count-row">
+    <span class="channel-count {{ 'over-limit' if channels|length > recommended_limit }}">
+      등록된 채널 {{ channels|length }}개 · 최대 {{ recommended_limit }}개 이내를 권장해요
+    </span>
+  </div>
+
+  <div class="channel-list">
+    {% for ch in channels %}
+    <div class="channel-row">
+      <div class="avatar">{{ ch.title[0] }}</div>
+      <div>
+        <div class="channel-name">{{ ch.title }}</div>
+        <div class="channel-meta">{{ ch.url }}</div>
+      </div>
+      <form method="post" action="{{ url_for('delete_channel', channel_id=ch.id) }}" style="margin-left: auto;">
+        <button class="remove-btn" type="submit">삭제</button>
+      </form>
+    </div>
+    {% else %}
+    <p class="help" style="margin-top: 18px;">아직 등록된 채널이 없어요.</p>
+    {% endfor %}
+  </div>
+</div>
+<p class="help">채널은 언제든 추가하거나 삭제할 수 있어요.</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero-brand">
+  <span class="hero-name">유슬핑</span>
+  <span class="hero-full"><span class="mark">유</span>튜브 <span class="mark">슬</span>라이드 브리<span class="mark">핑</span></span>
+</div>
+<h1>구독한 채널의 새 영상을,<br>슬라이드 요약본으로 받아보세요.</h1>
+<p class="lede">매일 정해진 시간에, 그날 올라온 영상들을 슬라이드 요약으로 모아 이메일로 보내드려요. 구독 채널을 등록하는 것부터 시작해요.</p>
+<div class="actions">
+  <a class="btn btn-primary" href="{{ url_for('channels') }}">채널 등록하러 가기</a>
+</div>
+{% endblock %}

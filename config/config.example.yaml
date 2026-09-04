@@ -1,0 +1,13 @@
+# 이건 "예시" 파일입니다. 실제 설정은 로컬 웹 UI(채널/발송 설정 화면)에서 클릭만으로 만들어집니다.
+# (개발 참고용으로 어떤 항목들이 저장될지 미리 적어둔 것)
+
+channels: []                        # 등록한 채널 목록 (웹 UI에서 채워짐)
+poll_interval_hours: 1              # 신규 업로드 확인 주기 (시간)
+shorts_threshold_seconds: 180       # 이 길이(초) 이하는 쇼츠로 간주해 제외
+recommended_channel_limit: 5        # 채널 등록 권장 개수 (하드 제한 아님)
+send_time: "08:00"                  # 하루 1회 이메일 발송 시각
+queue_policy: carry_over            # carry_over(이월) 또는 daily_drop(당일만)
+
+email:
+  address: ""                       # 받을 이메일 주소 (Gmail만 지원)
+  app_password: ""                  # 구글 계정 보안 설정에서 발급받은 앱 코드
