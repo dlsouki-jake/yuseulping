@@ -48,6 +48,7 @@ cd yuseulping
 ```
 
 ### 2. 실행 환경 준비
+Python 3.9 이상을 권장해요.
 ```
 python3 -m venv .venv
 source .venv/bin/activate
@@ -103,3 +104,14 @@ python src/sender.py --force
 - **Windows 지원 기여를 환영해요!** Windows용 자동 실행 등록 스크립트나, Windows에서 직접 써보신 후 문제점 리포트를 PR/이슈로 남겨주시면 큰 도움이 돼요.
 - NotebookLM/yt-dlp 모두 비공식 방식이라, 구글/유튜브가 뭔가 바꾸면 일시적으로 깨질 수 있어요
 - 카카오톡 발송, 구글 드라이브 연동은 지원하지 않아요 (검토 후 1차 버전에서 제외 — 이유는 `DESIGN.md` 참고)
+
+## 기여하기
+버그 제보, 기능 제안, 코드 기여 모두 환영해요. 코드로 기여하고 싶다면:
+1. 이 저장소를 **Fork**하세요 (오른쪽 위 "Fork" 버튼)
+2. 새 브랜치를 만들어 작업하세요 (예: `git checkout -b fix-windows-autostart`)
+3. 변경사항을 커밋하고 본인 저장소에 푸시한 뒤, **Pull Request**를 보내주세요
+
+특히 Windows 지원(자동 실행 스크립트, 실사용 테스트)이 필요해요 — 자세한 배경은 위 "알려진 제약"을 참고해주세요.
+
+## 라이선스
+MIT License입니다. 자세한 내용은 [`LICENSE`](./LICENSE) 파일을 확인하세요.
