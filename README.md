@@ -41,7 +41,13 @@ scripts/
 
 ## 설치 방법 (macOS)
 
-### 1. 실행 환경 준비
+### 1. 저장소 받기
+```
+git clone https://github.com/dlsouki-jake/yuseulping.git
+cd yuseulping
+```
+
+### 2. 실행 환경 준비
 ```
 python3 -m venv .venv
 source .venv/bin/activate
@@ -49,14 +55,14 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 2. NotebookLM 로그인 (최초 1회)
+### 3. NotebookLM 로그인 (최초 1회)
 ```
 python scripts/notebooklm_login.py
 ```
 브라우저 창이 뜨면 구글 계정으로 로그인하세요. NotebookLM 홈 화면이 보이면 자동으로 감지해서
 저장하고 창이 닫혀요 (따로 엔터를 누르실 필요는 없어요).
 
-### 3. 로컬 웹 UI 실행
+### 4. 로컬 웹 UI 실행
 ```
 python src/webui/app.py
 ```
@@ -66,7 +72,7 @@ python src/webui/app.py
 - **채널**: 요약받고 싶은 유튜브 채널 URL을 붙여넣어 등록 (최대 5개 이내 권장)
 - **발송 설정**: 받을 이메일 주소 입력 + "Google에서 발급받기" 버튼으로 앱 비밀번호(코드) 발급받아 붙여넣기 + 발송 시각 선택
 
-### 4. 컴퓨터 시작 시 자동 실행 등록 (추천)
+### 5. 컴퓨터 시작 시 자동 실행 등록 (추천)
 ```
 python scripts/install_autostart.py
 ```
