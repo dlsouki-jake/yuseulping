@@ -1,5 +1,9 @@
 # 유슬핑 (유튜브 슬라이드 브리핑)
 
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)
+![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
+
 *개인용 유튜브 요약 다이제스트 / 뉴스레터 자동화 도구*
 
 구독 중인 유튜브 채널에 새 영상(롱폼만, 쇼츠 제외)이 올라오면 NotebookLM으로 슬라이드 요약(PDF)을
